@@ -1,18 +1,18 @@
-const agregarProducto = () => {
-    if (confirm("Deseas agregar un producto?")) {
-        let nombreProducto = prompt("Nombre del producto:").toUpperCase()
-        let categoriaProducto = prompt("Categoria del producto:").toUpperCase()
-        let imorteProducto = prompt("Importe del producto:")
-        if (nombreProducto === "") {
-            console.warn("No se ingreso el nombre del producto")
-        }
-        else {
-            productos.push(new Producto(nombreProducto, categoriaProducto, imorteProducto))
-            listarProductos()
-        }
+const creoID = () => parseInt(Math.random() * 10000)
 
+const agregarProducto = () => {
+    let id = creoID()
+    let nombreProducto = prompt("Nombre del producto:").toUpperCase()
+    let categoriaProducto = prompt("Categoria del producto:").toUpperCase()
+    let imorteProducto = prompt("Importe del producto:")
+    if (nombreProducto === "") {
+        console.warn("No se ingreso el nombre del producto")
+    }
+    else {
+        productos.push(new Producto(id, nombreProducto, categoriaProducto, imorteProducto))
     }
 
+    recorrerProductos()
 }
 
 function listarProductos() {
@@ -21,23 +21,16 @@ function listarProductos() {
     }
 }
 
-
 function generadorAutomatico() {
-    productos.push(new Producto("MANZANA", "ALIMENTOS", 50))
-    productos.push(new Producto("PERA", "ALIMENTOS", 20))
-    productos.push(new Producto("BANANA", "ALIMENTOS", 10))
-    productos.push(new Producto("FIDEOS", "ALIMENTOS", 350))
-    productos.push(new Producto("TRAPO DE PISO", "ALIMENTOS", 100))
-    productos.push(new Producto("DETERGENTE", "ALIMENTOS", 150))
-    productos.push(new Producto("HDMI", "TECNOLOGIA", 800))
-    productos.push(new Producto("TV", "TECNOLOGIA", 370000))
-    productos.push(new Producto("PARLANTE JBL", "TECNOLOGIA", 16000))
-}
-
-function recorrerProductos() {
-    productos.forEach(producto => {
-        console.log(producto)
-    })
+    productos.push(new Producto(11111, "MANZANA", "ALIMENTOS", 50))
+    productos.push(new Producto(11112,"PERA", "ALIMENTOS", 20))
+    productos.push(new Producto(11113,"BANANA", "ALIMENTOS", 10))
+    productos.push(new Producto(11114,"FIDEOS", "ALIMENTOS", 350))
+    productos.push(new Producto(11115,"TRAPO DE PISO", "ALIMENTOS", 100))
+    productos.push(new Producto(11116,"DETERGENTE", "ALIMENTOS", 150))
+    productos.push(new Producto(11117,"HDMI", "TECNOLOGIA", 800))
+    productos.push(new Producto(11118,"TV", "TECNOLOGIA", 370000))
+    productos.push(new Producto(11119,"PARLANTE JBL", "TECNOLOGIA", 16000))
 }
 
 function buscarProducto() {
@@ -50,13 +43,12 @@ function buscarProducto() {
             console.log("Se encontro el siguiente producto en tus compras : " + resultado.nombre)
         }
     }
-
 }
 
 function filtrarProductos() {
-    if(confirm("Deseas filtrar los productos?")){
+    if (confirm("Deseas filtrar los productos?")) {
         let categoria = prompt("Ingresa la categoria a filtrar:")
-        let resultado = productos.filter(producto => producto.categoria  === categoria)
+        let resultado = productos.filter(producto => producto.categoria === categoria)
         console.table(resultado)
     }
 
