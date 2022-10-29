@@ -1,7 +1,15 @@
+const btnLogin = document.querySelector("button.login")
+
+btnLogin.addEventListener("click", logueo)
+
+const tituloPrincipal = document.querySelector("h1#titulo")
+
 function logueo() {
     if (nombreApellido == null) {
         nombreApellido = prompt("Ingresa tu nombre y apellido")
         console.log("Bienvenid@", nombreApellido, "a su billetera virtual")
+        tituloPrincipal.innerHTML = "Bienvenid@ " + nombreApellido + "a su billetera virtual"
+
     } else {
         console.log("Ya te encuentras logueado", nombreApellido)
     }

@@ -1,3 +1,4 @@
+/*
 logueo()
 
 generadorAutomatico()
@@ -11,3 +12,4 @@ buscarProducto()
 filtrarProductos()
 
 ordenar()
+*/
